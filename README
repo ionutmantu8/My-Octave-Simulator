@@ -1,0 +1,138 @@
+//Copyright Ionut Mantu 313 CAb 2023-2024
+Implementarea problemei:
+In main am definit variabilele de care am nevoie si am alcoat vectorul de 
+matrici si vectorii linii si coloane in care retin cat de mari
+sunt matricile.Apoi am o bucla infinita in care intru pentru a 
+introduce cate matrici este nevoie si pt a iesi din ea prin tasta Q.
+
+In acea bucla:
+Am un switch pentru fiecare caz de litera,verificand intai daca 
+vectorul de matrici mai are loc de stocat daca nu ii dublez marimea.
+
+In switch:
+Cazul'L'(Introducere in memorie a unei matrici):
+Intai citesc cat de mare 
+este matricea,adica numarul de linii si de coloane,iar apoi 
+am implementat o functie de alocare, alocand memorie treptat pentru 
+fiecare matrice introdusa in memorie,iar apoi altafunctie prin care
+citesc elementele matricei.La fiecarea aplicare a cazului L cresc 
+numarul de matrici deoarece introduc o noua matrice in vectorul de
+matrici.
+
+Cazul 'D'(marimea unei matrici):
+Citesc o variabila index,apoi daca 
+aceasta este valida afisez valoarea vectorului linii de pe 
+pozitia index si a celui de coloane,iar daca este invalida
+afisez mesajul de eroare.
+
+Cazul 'P'(afisarea unei matrici):
+Citesc variabila index si apelez 
+functia de afisare a unei matrici,daca indexul nu este valid afisez 
+mesajul de eroare si ies din functie,iar daca nu afisez matricea de la index.
+
+Cazul 'T'(transpunere):
+Citesc variabila index si apoi apelez functia de 
+transpunere in care daca indexul este valid afisez
+mesajul de eroare si ies din ea,si daca nu aplic transpunerea prin 
+interschimbarea liniilor cu coloanele,punandule intr o matrice 
+auxiliara pe care mai apoi o adaug in vectorul de matrici prin eliberarea 
+memeoriei pentru matricea de la index si punerea transpusei 
+in acel loc.
+
+Cazul 'M'(inmultirea a 2 matrici):
+Citesc variabila index si apoi intru in functia de inmultire.
+Identic ca mai sus verific indexurile celor 2 matrici sa vad daca 
+sunt valide,daca nu afisez mesajul de eroare si ies din functie
+si de asemenea verific si daca numarul de
+coloane al primei este egal cu numarul de linii al 
+celei de a 2 a ca sa stiu daca pot efectua inmultirea,daca nu afisez mesajul de
+eroare si din nou ies din functie.Am implementat apoi algoritmul
+de inmultire a 2 matrici(inmultirea linie-coloana),iar rezultatul fie-
+carei operatii este stocat intr o matrice auxiliara.
+La final matricea auxiliara este pusa in vectorul de matrici la fel ca si in
+vectorul de linii am stocat pentru poztia matricei inmultire 
+valoarea de la linii de pe pozitia index si in coloane valoarea coloane-
+lor de la pozitia index_1,deoarece conform algoritmului aceasta 
+va fi marimea matricei rezultat.
+
+Cazul 'O'(sortarea matricilor):
+Apelez functia de sortare in care imi creez un vector auxiliar in 
+care pe fiecare pozitie va fi suma tuturor elemetelor matricei 
+de la o anumita pozitie.Ideea prin care am rezolvat fost urmatoarea:
+Avand in vectorul sumele suma elemen-
+telor fiecarei matrici sortez acest vector de sume simultan cu 
+vectorul de matrici verificand spre exemplu daca suma de la pozitia 0
+este mai mare ca suma de la pozitia 1,interschimbandu-le in timp ce 
+interschimb si matricile si dimensiunile lor din vectorii linii si coloane.
+In final dupa finalizarea sortarii eliberez din memorie vectorul de sume.
+
+Cazul 'Q'(dealocarea tuturor resurselor):
+Apelez functia dealocare totala in care eliberez tot 
+vectorul de matrici si vectorul linii si coloane.Apoi dupa dealocarea 
+tuturor resurselor pentru a inchide bucla infinita am adaugat exit(0)
+ca sa inchida tot programul fara probleme.
+
+Cazul 'F'(eliberarea unei matrice din memorie):
+Citesc variabila index si apoi intru intr o functie in 
+care verific daca indexul este valid ca mai sus dupa care eliberez
+matricea de la acea pozitie din memorie,scad numarul de matrici 
+si mut fiecare matrice din vector la stanga o data cu dimensiunile
+lor asta in cazul in care numarul de matrici este mai mare ca 1,
+daca e egal cu 1 atunci doar eliberez din memorie si scad numarul de matrici.
+
+Cazul 'C'(redimensionarea):
+Citesc variabila index si intru in functia de redimensioanre unde 
+verifc indexul,iar apoi citesc numarul de linii dupa care redimensionez
+si aloc un vector in care retin dupa ce linii se doreste redimensionarea,
+facand indetic si pentru coloane.
+Aloc apoi o matrice auxiliara in care voi tine matricea redimensionata.
+In aceasta matrice adaug elementele de la dupa care se doreste 
+redimensionarea si apoi eliberez matricea de la pozitia index 
+pentru a pune acolo acea auxiliara,iar marimile acesteia noi sunt stocate
+in vectorul linii si coloane luand valoarea variabilelor pecare
+le am citit pt a stii dupa cate linii si coloane redimensionez.
+Eliberez apoi din memorie vectorii in care retin liniile si coloanele
+dupa care redimensionez si termin.
+
+Cazul 'R'(ridicarea la putere in timp logaritmic):
+Citesc indexul si puterea la care trebuie sa ridic,apoi intru
+in functia de ridicare la putere unde verific daca acestea sunt valide,
+iar in caz contrar afisez mesajul de eroare si ies din fuctie.
+Acum incepe aplicarea algoritmului de ridicare la putere in timo logaritmic.
+Introduc o structura repetitiva,cu conditia ca puterea sa fie pozitiva
+in care  verific daca puterea este para sau impara pe mine ma intereseaza
+daca este para sa fac de exemplu a^2*a^2 si daca este impara 
+sa fie A*A^4 care va fi egala cu A*A^2*A^2.Si atunci daca puterea e 
+impara algorimul meu va face in acea matrice auxiliara temp pentru 
+inceput identitate * matricea de la index,iar apoi imparte puterea la 
+jumatate pentru a obtine un numar par,pentru a nu intra in conditia de imparitate.
+Pe rand operatiile facute vor fi salvate in matricea rezulat pt condtia impara
+si apoi pentru conditia para voi faca matrice*matrice de cate ori
+e necesar si voi salva direct in vectorul  de matrici pe pozitia index.
+In final daca am intampinat o putere impara in rezulat vom avea 
+matricea * matricea inmultita cu cu ea insasi in functie de cate
+ori a fost necesar.Ultimul pas este eliberam matricea de la index si 
+sa punem matricea rezultat pe acea pozitie.
+
+Cazul 'S'(algoritmul lui strassen):
+Citesc index si index 1 si intru in functie unde verific daca sunt valide.
+La acest task folosesc mai multe functii implementate strict pentru 
+a le folosi aici,cum ar fi o functie de adunare a 2 matrici,de scadere a 2
+matrici,de inmultire a 2 matrici,de alocare a blocurilor A,B,C si 
+a matricelor M,functie de stabilit valorile blocurilor A si B si 
+de initalizare cu 0 a C.Iar acum cand intru in functia strassen 
+dupa verificari,aloc o matrice auxiliara unde voi tine matricea rezultat
+dupa care apelez functie operatatii_strassen pt a putea utiliza 
+recursivitatea.In functia de operatii aloc toate blocurile si inclusiv 
+matricele M si 2 matrici auxiliare cu ajutorul carora efectuez
+operatiile din algortim.Urmeaza apoi cu ajutorul functiilor creeate 
+pentru acest task sa calculam valorile matricelor M1,M2,...,M7
+reapeland functia la in momentul necesitatii unei inmultirii pentru a 
+ajunge la recursivitate ca sa sparg si blocurile rezultate in blocuri
+si mai mici si tot asa pana cand ajung la conditia de oprire care 
+este ca marimea sa fie 2 deoarece aici doar se face o simpla inmultire,
+pt ca nu mai am in ce blocuri sa sparg.In final stochez in 
+matricea rezultat valorile si revennind in functia intiaiala
+pun la finalul vectorului de matrici matricea auxiliara
+in care se afla matricea rezultat si updatez valorile pentru linii
+si coloane de unde se afla matricea rezultat.
