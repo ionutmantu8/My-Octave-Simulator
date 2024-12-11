@@ -136,4 +136,3 @@ matricea rezultat valorile si revennind in functia intiaiala
 pun la finalul vectorului de matrici matricea auxiliara
 in care se afla matricea rezultat si updatez valorile pentru linii
 si coloane de unde se afla matricea rezultat.
-//Acesta a fost unul dintre primele mele proiecte stiu ca nu este in regula ca in fisiere header sa se afle cod dar n am mai apucat sa schimb
